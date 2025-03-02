@@ -1,0 +1,26 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-off-black);
+    gap: 45px;
+}
+
+.title {
+    font-size: 50px;
+    color: var(--color-silver-white);
+}
+
+.content {
+    color: var(--color-readable-gray);
+    max-width: 700px;
+    text-align: center;
+}
+
+.image {
+    width: 900px;
+    height: auto;
+}
