@@ -1,7 +1,9 @@
-import React from 'react'
-import styles from './homepage.module.css'
-import ProjectContainer from '../components/ProjectContainer'
-import GraphicDesign from '../components/GraphicDesigns'
+import React from 'react';
+import styles from './homepage.module.css';
+import ProjectContainer from '../components/ProjectContainer';
+import GraphicDesign from '../components/GraphicDesigns';
+import About from '../components/About';
+import Spline from '@splinetool/react-spline/next';
 
 export default function HomePage() {
     const content = {
@@ -10,26 +12,39 @@ export default function HomePage() {
             title : "remedify",
             description : "Remedify is a cutting-edge medication management app designed specifically for patients managing multiple prescriptions, including those with polypharmacy needs. Leveraging AI technology, the app simplifies health routines by allowing users to scan and identify medications, set tailored reminders, and track adherence."
         },
-        wonderland : {
-            imageSrc : "/Group 1346.png",
-            title : "wonderland",
-            description : "Wonderland is a unique app that encourages self-reflection and personal growth through an interactive, game-like platform. Designed to support mental and emotional well-being; it offers engaging features that guide users on a journey of self-discovery."
-        },
-    }
+    };
 
-  return (
-    <>
-    <div className={styles.container}>
-        <h1 className={styles.title}>JILLIAN G.</h1>
-        <div className={styles.text}>
-            <p>I am a <span className={styles.highlight}>product designer</span> who crafts like this floating crystal cube;</p>
-            <p>clean, minimalistic, and reflective of intention</p>
-        </div>
-    </div>
+    return (
+        <>
+            {/* Hero Section */}
+            <div id="home" className={styles.container}>
+                <Spline scene="https://prod.spline.design/HSBJbJ1qIjRSQhFX/scene.splinecode" />
+                <div className={styles.textContainer}>
+                    <div className={styles.text}>
+                        <p>I am a <span className={styles.highlight}>product designer</span> who crafts like this floating crystal cube;</p>
+                        <p>clean, minimalistic, and reflective of intention</p>
+                    </div>
+                </div>
+            </div>
 
-    <ProjectContainer imageSrc={content.remedify.imageSrc} title={content.remedify.title} description={content.remedify.description} />
-    <ProjectContainer imageSrc={content.wonderland.imageSrc} title={content.wonderland.title} description={content.wonderland.description} />
-    <GraphicDesign />
-    </>
-  )
+            {/* Project Section */}
+            <div id="project">
+                <ProjectContainer 
+                    imageSrc={content.remedify.imageSrc} 
+                    title={content.remedify.title} 
+                    description={content.remedify.description} 
+                />
+            </div>
+
+            {/* Graphic Design Section */}
+            <div id="graphicDesign">
+                <GraphicDesign />
+            </div>
+
+            {/* About Section */}
+            <div id="about">
+                <About />
+            </div>
+        </>
+    );
 }
