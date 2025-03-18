@@ -1,0 +1,131 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-off-black);
+}
+
+.textContainer {
+    position: absolute;
+    top: 25%;
+    left: 100px;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.firsttitle {
+    color: var(--color-silver-white);
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.secondtitle {
+    color: var(--color-silver-white);
+    font-size: 80px;
+    font-weight: 600;
+    padding-left: 60px;
+}
+
+.casestudy {
+    background-color: var(--color-readable-gray);
+    color: var(--color-silver-white);
+    font-weight: 400;
+    padding: 10px 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.duration {
+    color: var(--color-silver-white);
+    font-weight: 400;
+}
+
+.detailContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.image {
+    position: absolute;
+    bottom: -50%;
+    right: -25%;
+    width: 110vw;
+    height: auto;
+}
+
+.highlight {
+    color: #00A39B;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 100px;
+    gap: 55px;
+}
+
+.subHeadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.subHeadingContainer h5 {
+    color:  var(--color-readable-gray);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.subHeadingContainer span {
+    color:  var(--color-readable-gray);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.subHeadingContainer p {
+    color:  var(--color-readable-gray);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titleContainer h2 {
+    color: var(--color-silver-white);
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.titleContainer {
+    max-width: 800px;
+}
+
+.titleContainer p {
+    color: var(--color-light-gray);
+}
+
+.detailContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 65px;
+}
+
+.detailContent {
+    color: var(--color-readable-gray);
+}
+
+.detailTitle {
+    margin-bottom: 8px;
+    color: var(--color-silver-white);
+}

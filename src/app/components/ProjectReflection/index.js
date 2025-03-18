@@ -7,7 +7,9 @@ export default function ProjectReflection({ content, url }) {
     <section className={styles.container}>
         <h3 className={styles.title}>Design Approach</h3>
         <p className={styles.content}>{content}</p>
-        <Image className={styles.image} src={url} alt='mockup' width={200} height={200} />
+        <div className={styles.imageWrapper}>
+          <Image className={styles.image} src={url} alt='mockup' width={200} height={200} />
+        </div>
     </section>
   )
 }

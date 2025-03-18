@@ -1,33 +1,59 @@
+"use client"
 import React from 'react'
 import ProjectHero from '@/app/components/ProjectHero'
 import ProjectOverview from '@/app/components/ProjectOverview'
-import ProjectReflection from '@/app/components/ProjectReflection'
+import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import styles from './michelangelo.module.css'
 
 export default function Michelangelo() {
     const project = {
         hero: {
-            url: "/bareminimum/illust1.jpg"
+            url: "/michelangelo/Poster Mockup.jpg"
         },
         overview: {
-            subheading: "Magazine Design",
-            title: "Michelangelo",
-            content: "For this project, I was tasked with creating a magazine centered on a theme within architecture. After exploring various options, I chose to focus on minimalism in architectural design, emphasizing its core principles of simplicity and functionality. The assignment required researching diverse styles, curating compelling content, and designing a cohesive layout that embodied the essence of minimalism.",
+            subheading: "Poster Design",
+            title: "Frozen in Time, Brought to Life",
+            content: "For this project, I was tasked with selecting an art theme to exhibit at the National Canadian Museum of History. Inspired by my interest in figure sculptures, I chose to center the theme around Michelangelo's statues and artwork. This two-week project allowed me to refine my poster layout design skills while showcasing a cohesive and visually engaging concept",
             role: "Graphic Designer",
             duration: "Oct. — Nov. 2024",
-            time: "1 Month",
-            projecttype: "Typography Assignment",
+            time: "2 Weeks",
+            projecttype: "Poster Layout Assignment",
             tools: "Indesign, Illustrator"
         },
         reflection: {
-            content: "Since this project was a minimalism magazine, I selected sans-serif fonts and used a condensed bold font for the titles to create a stronger visual impact. I carefully balanced negative space to ensure it felt intentional and cohesive, enhancing the overall flow and design of the magazine.",
-            url: "/bareminimum/01.png"
+            content: ["For this poster, I aimed to take an experimental approach with the fonts and layout, drawing inspiration from Michelangelo’s extraordinary work. To make the design stand out, I adjusted the tracking to create more space between words, giving it an edgy, minimalistic, and almost futuristic feel. This ironic contrast—pairing a modern design approach with a historical concept—symbolizes the timelessness of Michelangelo’s art.", "To ensure the focus remained on the statue, I opted for a dotted halftone effect instead of a traditional photo. This choice complemented the black-and-white design, emphasizing the statue’s details while tying together the overall concept cohesively."],
+            url: "/michelangelo/psd 3.png"
         }
     }
+
+    const containerRef = useRef()
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    })
+    const y = useTransform(scrollYProgress, [0, 1], ["100vh", "0vh"]) 
+
   return (
     <main>
-        <ProjectHero url={project.hero.url} />
-        <ProjectOverview subheading={project.overview.subheading} title={project.overview.title} content={project.overview.content} role={project.overview.role} duration={project.overview.duration} time={project.overview.time} projecttype={project.overview.projecttype} tools={project.overview.tools} />
-        <ProjectReflection content={project.reflection.content} url={project.reflection.url} />
+        <div className={styles.wrapper} ref={containerRef}>
+            <ProjectHero url={project.hero.url} />
+            <motion.section className={styles.motion} style={{y}}>
+                <ProjectOverview subheading={project.overview.subheading} title={project.overview.title} content={project.overview.content} role={project.overview.role} duration={project.overview.duration} time={project.overview.time} projecttype={project.overview.projecttype} tools={project.overview.tools} />
+                <section className={styles.container}>
+                    <div className={styles.textWrapper}>
+                        <h3 className={styles.title}>Design Approach</h3>
+                        {project.reflection.content.map((paragraph, index) => (
+                            <p className={styles.content} key={index}>{paragraph}</p>
+                        ))}
+                    </div>
+                    <div className={styles.imageWrapper}>
+                        <Image className={styles.image} src={project.reflection.url} alt='mockup' width={200} height={200} />
+                    </div>
+                </section>
+            </motion.section>
+        </div>
     </main>
   )
 }

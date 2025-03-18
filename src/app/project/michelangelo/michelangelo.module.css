@@ -1,0 +1,44 @@
+.wrapper {
+    position: relative;
+    height: 200vh;
+}
+
+.motion {
+    height: 200vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-off-black);
+    gap: 45px;
+    padding: 55px 30px 55px 150px;
+}
+
+.title {
+    font-size: 50px;
+    color: var(--color-silver-white);
+    margin-bottom: 45px;
+}
+
+.content {
+    color: var(--color-readable-gray);
+    max-width: 550px;
+    margin-bottom: 20px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.imageWrapper {
+    flex: 1;
+}

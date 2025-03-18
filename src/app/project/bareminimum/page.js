@@ -1,7 +1,11 @@
+"use client"
 import React from 'react'
 import ProjectHero from '@/app/components/ProjectHero'
 import ProjectOverview from '@/app/components/ProjectOverview'
 import ProjectReflection from '@/app/components/ProjectReflection'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import styles from './bareminimum.module.css'
 
 export default function Bareminimum() {
     const project = {
@@ -16,7 +20,7 @@ export default function Bareminimum() {
             duration: "Oct. — Nov. 2024",
             time: "1 Month",
             projecttype: "Typography Assignment",
-            tools: "Indesign, Illustrator"
+            tools: "Indesign, Illustrator",
         },
         reflection: {
             content: "Since this project was a minimalism magazine, I selected sans-serif fonts and used a condensed bold font for the titles to create a stronger visual impact. I carefully balanced negative space to ensure it felt intentional and cohesive, enhancing the overall flow and design of the magazine.",
@@ -24,13 +28,22 @@ export default function Bareminimum() {
         }
     }
 
-    
+    const containerRef = useRef()
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    })
+    const y = useTransform(scrollYProgress, [0, 1], ["100vh", "0vh"]) 
 
   return (
     <main>
-        <ProjectHero url={project.hero.url} />
-        <ProjectOverview subheading={project.overview.subheading} title={project.overview.title} content={project.overview.content} role={project.overview.role} duration={project.overview.duration} time={project.overview.time} projecttype={project.overview.projecttype} tools={project.overview.tools} />
-        <ProjectReflection content={project.reflection.content} url={project.reflection.url} />
+        <div className={styles.wrapper} ref={containerRef}>
+            <ProjectHero url={project.hero.url} />
+            <motion.section className={styles.motion} style={{y}}>
+                <ProjectOverview subheading={project.overview.subheading} title={project.overview.title} content={project.overview.content} role={project.overview.role} duration={project.overview.duration} time={project.overview.time} projecttype={project.overview.projecttype} tools={project.overview.tools} />
+                <ProjectReflection content={project.reflection.content} url={project.reflection.url} />
+            </motion.section>
+        </div>
     </main>
   )
 }

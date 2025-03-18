@@ -2,9 +2,21 @@
     height: 100vh;
     margin: auto;
     overflow: hidden;
+    position: fixed;
+    top: 0;
 }
 
 .image {
     width: 100vw;
     height: auto;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+}
+
+.imageWrapper {
+    width: 100vw;
+    height: auto;
+    position: relative;
 }

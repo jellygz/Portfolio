@@ -1,0 +1,12 @@
+.wrapper {
+    position: relative;
+    height: 200vh;
+}
+
+.motion {
+    height: 200vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
