@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react'
-import ProjectOverview from '@/app/components/ProjectOverview'
 import styles from './remedify.module.css'
 import Image from 'next/image'
 
@@ -22,11 +21,11 @@ export default function Remedify() {
         {/* Section 1 */}
       <section className={styles.container}>
         <div className={styles.textContainer}>
-          <div className={styles.titleContainer}>
+          <div className={styles.mainTitleContainer}>
                 <h2 className={styles.firsttitle}>Your Health</h2>
                 <h2 className={styles.secondtitle}>Our <span className={styles.highlight}>Priority</span></h2>
             </div>
-            <div className={styles.detailContainer}>
+            <div className={styles.typeContainer}>
                 <h3 className={styles.casestudy}>Case Study</h3>
                 <p className={styles.duration}>8 min. read</p>
             </div>
@@ -39,7 +38,7 @@ export default function Remedify() {
       <section className={styles.lightGreyContainer} style={{display: 'flex', flexDirection: 'row'}}>
 
     <div style={{flex: '5'}}>
-        <div className={styles.subHeadingContainer} style={{paddingRight: '800px'}}>
+        <div className={styles.subHeadingContainer}>
           <h5>Mobile App Design</h5>
           <span> | </span>
           <p>Overview</p>
@@ -90,38 +89,35 @@ export default function Remedify() {
         {/* Section 3 */}
         <section className={styles.container} style={{alignItems: 'center'}}>
 
-                <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px'}}>
-                EMPHATHIZE
-                </h3>
+            <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px'}}>
+            EMPHATHIZE
+            </h3>
 
-
+            <div className={styles.emphathizeContainer}>
                 <p style={{color: 'lightgrey', fontSize: '20px'}}>
                     01 Problem Statement
                 </p>
-
-
-            <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center'}}>
-            Medications shouldn’t be a hurdle to better health.
-            </h2>
-
-            <div style={{padding: "3vw 16vw", textAlign: 'center'}}>
-                <p style={{color: 'white', fontsize: ' 15px'}}>
-                Occasional medication use often be managed with simple alarms; however managing multiple daily medications are significantly more complex and often requires caregiver support. This challenge is particularly difficult for individuals experiencing cognitive decline or health conditions that impact memory and overall functioning.
-                </p>
+                <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center'}}>
+                Medications shouldn’t be a hurdle to better health.
+                </h2>
+                <div style={{padding: "3vw 16vw", textAlign: 'center'}}>
+                    <p style={{color: 'white', fontsize: ' 15px'}}>
+                    Occasional medication use often be managed with simple alarms; however managing multiple daily medications are significantly more complex and often requires caregiver support. This challenge is particularly difficult for individuals experiencing cognitive decline or health conditions that impact memory and overall functioning.
+                    </p>
+                </div>
             </div>
-
+            <div className={styles.emphathizeContainer}>
                 <p style={{color: 'lightgrey', fontSize: '20px'}}>
                 02 Secondary Research
                 </p>
-
-            <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center'}}>
-            Half of us are unknowingly sabotaging our own health.
-            </h2>
-
-            <div style={{padding: "3vw 16vw", textAlign: 'center'}}>
-            <p style={{color: 'white', fontsize: ' 15px', paddingBottom:'90px'}}>
-            Our research reveals that 50% of individuals underuse medications, with 60% misunderstanding instructions and 49.6% forgetting doses. While occasional medication use can be managed with alarms, managing multiple daily medications is far more complex, often requiring caregiver support. These statistics highlight the urgent need for a solution to improve medication management for those with intricate regimens.
-            </p>
+                <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center'}}>
+                Half of us are unknowingly sabotaging our own health.
+                </h2>
+                <div style={{padding: "3vw 16vw", textAlign: 'center'}}>
+                <p style={{color: 'white', fontsize: ' 15px', paddingBottom:'90px'}}>
+                Our research reveals that 50% of individuals underuse medications, with 60% misunderstanding instructions and 49.6% forgetting doses. While occasional medication use can be managed with alarms, managing multiple daily medications is far more complex, often requiring caregiver support. These statistics highlight the urgent need for a solution to improve medication management for those with intricate regimens.
+                </p>
+                </div>
             </div>
         </section>
 
@@ -146,32 +142,20 @@ export default function Remedify() {
                 <p style={{paddingTop: '30px'}}>
                 One-Tap Medication Logging allows users to log doses instantly from the home screen’s main CTA. This simple, intuitive feature streamlines the tracking process, reducing manual input and minimizing errors for a quick, accurate, and hassle-free experience.
                 </p>
-
-                <Image className={styles.image}
-                src="/remedify/Metoprolol.png" 
-                alt="25mg" 
-                width={600} 
-                height={600} 
-                style={{
-                    maxWidth: "98%",
-                    height: "auto",
-                    paddingLeft: '80px',
-                    paddingTop: '60px'
-                }}
-                />
-
-                <Image className={styles.image}
-                src="/remedify/George.png" 
-                alt="George" 
-                width={600} 
-                height={600} 
-                style={{
-                    maxWidth: "98%",
-                    height: "auto",
-                    paddingRight: '80px',
-                    paddingTop: '60px'
-                }}
-                />
+                <div className={styles.smallImageContainer}>
+                    <Image className={`${styles.smallImage} ${styles.right}`}
+                    src="/remedify/Metoprolol.png" 
+                    alt="25mg" 
+                    width={600} 
+                    height={600} 
+                    />
+                    <Image className={`${styles.smallImage} ${styles.left}`}
+                    src="/remedify/George.png" 
+                    alt="George" 
+                    width={600} 
+                    height={600} 
+                    />
+                </div>
             </div>
             <div style={{ flex: 1, padding: "10vw 3vw", position: "relative" }}>
             <Image
@@ -207,57 +191,40 @@ export default function Remedify() {
                 <p style={{paddingTop: '30px'}}>
                 Keep track of all your medications in one organized and accessible library. Easily review essential details like dosage, frequency, duration, and active ingredients at a glance. Get reliable, easy-to-understand information to stay informed and in control of your health.
                 </p>
-
-                <Image className={styles.image}
-                src="/remedify/Insulin.png" 
-                alt="George" 
-                width={600} 
-                height={600} 
-                style={{
-                    maxWidth: "98%",
-                    height: "auto",
-                    paddingRight: '80px',
-                    paddingTop: '60px'
-                }}
-                />
+                <div className={styles.smallImageContainer}>
+                    <Image className={styles.smallImage}
+                    src="/remedify/Insulin.png" 
+                    alt="George" 
+                    width={600} 
+                    height={600} 
+                    />
+                </div>
             </div>
         </div>
 
         {/* Third double div */}
         <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
             <div style={{flex: '1', padding: '10vw 10vw'}}>
-            <h4 style={{color: 'green'}}>AI-Powered Scanning Feature</h4>
-                <h3 style={{fontSize: '40px', color:'grey', paddingTop: '40px'}}>Label</h3>
-                <h3 style={{fontSize: '40px', color:'grey'}}>Scanning</h3>
-                <p style={{paddingTop: '30px'}}>
-                Effortlessly scan your medication labels, and our smart AI-powered system will automatically set up reminders for you—no manual input required. Minimize hassle, reduce missed doses, and simplify your health routine with ease!
-            </p>
-
-            <Image className={styles.image}
-            src="/remedify/Nembutal.png" 
-            alt="25mg" 
-            width={600} 
-            height={600} 
-            style={{
-                maxWidth: "98%",
-                height: "auto",
-                paddingLeft: '80px',
-                paddingTop: '60px'
-            }}
-            />
-
-            <Image className={styles.image}
-            src="/remedify/photo_again.png" 
-            alt="George" 
-            width={600} 
-            height={600} 
-            style={{
-                maxWidth: "98%",
-                height: "auto",
-                paddingRight: '80px',
-                paddingTop: '60px'
-            }}
-            />
+                <h4 style={{color: 'green'}}>AI-Powered Scanning Feature</h4>
+                    <h3 style={{fontSize: '40px', color:'grey', paddingTop: '40px'}}>Label</h3>
+                    <h3 style={{fontSize: '40px', color:'grey'}}>Scanning</h3>
+                    <p style={{paddingTop: '30px'}}>
+                    Effortlessly scan your medication labels, and our smart AI-powered system will automatically set up reminders for you—no manual input required. Minimize hassle, reduce missed doses, and simplify your health routine with ease!
+                </p>
+                <div className={styles.smallImageContainer}>
+                    <Image className={`${styles.smallImage} ${styles.right}`}
+                    src="/remedify/Nembutal.png" 
+                    alt="25mg" 
+                    width={600} 
+                    height={600} 
+                    />
+                    <Image className={styles.smallImage}
+                    src="/remedify/photo_again.png" 
+                    alt="George" 
+                    width={600} 
+                    height={600} 
+                    />
+                </div>
             </div>
 
             <div style={{ flex: 1, padding: "10vw 6vw", position: "relative" }}>
@@ -277,15 +244,14 @@ export default function Remedify() {
 
         {/* Section 6 */}
     <section className={styles.lightGreyContainer} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '100px'}}>
-        <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px'}}>
+        <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px', textTransform: 'uppercase', marginBottom: '55px'}}>
             Define
         </h3>
-
         <p style={{color: 'lightgrey', fontSize: '20px'}}>
         01 User Research Findings (In-Depth)
         </p>
 
-        <h2 style={{color: 'black', fontSize: '30px', textAlign: 'center'}}>
+        <h2 style={{color: 'black', fontSize: '30px', textAlign: 'center', marginTop: '16px'}}>
         We interviewed users, caregivers, and experts.
         </h2>
 
@@ -294,53 +260,43 @@ export default function Remedify() {
             We conducted in-depth surveys, interviews, and secondary research to better understand the struggles of individuals managing medication and their caregivers. Our research revealed key pain points, user needs, and insights that guided our solution.
             </p>
         </div>
-
         {/* flex 5-2 */}
         <div style={{display: 'flex', flexDirection: 'row', gap: '40px'}}>
-                <div style={{flex: '5'}}>
-                    <h4 style={{fontSize: '35px', paddingBottom: '30px', paddingTop: '40px'}}>
-                        💬  Real Voices: Challenges & Needs in Medication Management
-                    </h4>
-                    <p>
-                    Managing medications isn’t just about taking pills—it’s about remembering, tracking, and ensuring adherence, especially for those with complex routines or caregiving responsibilities. Through our research, we conducted interviews with patients and caregivers to understand their struggles. Their responses highlight the pain points, concerns, and ideal solutions that shaped our app’s design.
-                    </p>
-                    
-                    <Image
-                        className={styles.image}
-                        src="/remedify/Patient1.png" 
-                        alt="patient1" 
-                        width={600} 
-                        height={600} 
-                        style={{
-                            maxWidth: "50%",
-                            height: "auto",
-                            paddingLeft: "80px",
-                            paddingTop: "60px",
-                            display: "block",  // Ensures proper alignment
-                            marginLeft: "auto" // Pushes the image to the right
-                        }}
-                    />
+            <div style={{flex: '5'}}>
+                <h4 style={{fontSize: '35px', paddingBottom: '30px', paddingTop: '40px'}}>
+                    💬  Real Voices: Challenges & Needs in Medication Management
+                </h4>
+                <p>
+                Managing medications isn’t just about taking pills—it’s about remembering, tracking, and ensuring adherence, especially for those with complex routines or caregiving responsibilities. Through our research, we conducted interviews with patients and caregivers to understand their struggles. Their responses highlight the pain points, concerns, and ideal solutions that shaped our app’s design.
+                </p>
+                
+                <p style={{paddingTop: '40px'}}>
+                (Referenced from Urgent Care Nurse: &quot;It would be beneficial to have easy access to GP and pharmacists for refills.&quot;)
+                </p>
 
-                    <p style={{paddingTop: '40px'}}>
-                    (Referenced from Urgent Care Nurse: "It would be beneficial to have easy access to GP and pharmacists for refills.")
-                    </p>
-
-                </div>
-                <div style={{ 
+            </div>
+            <div style={{ 
                 flex: '2', 
                 position: 'relative', 
                 padding: '10vw 10vw',
                 width: '100%', // Ensures the div stretches properly
                 height: 'auto', // Allows flexibility in height
-                }}>
+            }}>
                 <Image
-                    className={styles.image}
+                    className={styles.realVoicesImage}
+                    src="/remedify/Patient1.png" 
+                    alt="patient1" 
+                    width={600} 
+                    height={600} 
+                />
+                <Image
+                    className={styles.realVoicesImage}
                     src="/remedify/BiggestChallenge.png"
                     alt="Challenge"
                     fill
-                    style={{
-                        objectFit: "contain", // Prevents clipping, scales image to fit inside div
-                    }}/>
+                    width={600} 
+                    height={600} 
+                />
                 </div>
             </div>
     </section>

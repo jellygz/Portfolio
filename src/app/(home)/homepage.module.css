@@ -13,12 +13,9 @@
 }
 
 .textContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 900px;
-    padding-bottom: 100px;
+    position: absolute;
+    bottom: 10vh;
+    right: 50px;
 }
 
 .text {
@@ -35,3 +32,22 @@
 .highlight {
     color: var(--color-off-black);
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .textContainer {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .text {
+        align-items: center;
+        text-align: center;
+    }
+
+  }

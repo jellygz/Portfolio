@@ -22,7 +22,6 @@
     align-items: flex-start;
     flex-direction: column;
     padding: 100px 100px;
-    gap: 55px;
     overflow: hidden;
     position: relative;
     background-color: #ffffff; /* White background */
@@ -33,12 +32,12 @@
 .textContainer {
     position: absolute;
     top: 25%;
-    left: 100px;
+    left: 150px;
     z-index: 1; /* Ensure text stays above the image */
 }
 
 /* Title Container */
-.titleContainer {
+.mainTitleContainer {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -58,10 +57,19 @@
     padding-left: 60px;
 }
 
+.typeContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
 .casestudy {
     background-color: var(--color-readable-gray);
     color: var(--color-silver-white);
     font-weight: 400;
+    font-size: 15px;
     padding: 10px 12px;
     border-radius: 12px;
     display: inline-block;
@@ -72,21 +80,14 @@
     font-weight: 400;
 }
 
-.detailContainer {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding-top: 30px;
-}
-
 /* Base Image Styling */
 .image {
-    width: var(--image-width, 110vw);  /* Default width, but adjustable */
-    height: var(--image-height, auto); /* Default height, but adjustable */
-    object-fit: var(--image-object-fit, cover); /* Default fill behavior */
-    position: var(--image-position, relative); /* Default positioning */
-    bottom: var(--image-bottom, auto); /* Default bottom */
-    right: var(--image-right, auto); /* Default right */
+    width: var(--remedify-image-width, 110vw);  /* Default width, but adjustable */
+    height: var(--remedify-image-height, auto); /* Default height, but adjustable */
+    object-fit: var(--remedify-image-object-fit, cover); /* Default fill behavior */
+    position: var(--remedify-image-position, relative); /* Default positioning */
+    bottom: var(--remedify-image-bottom, auto); /* Default bottom */
+    right: var(--remedify-image-right, auto); /* Default right */
 }
 
 
@@ -98,9 +99,10 @@
 /* Subheading Container */
 .subHeadingContainer {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     gap: 10px;
+    margin-bottom: 32px;
 }
 
 .subHeadingContainer h5,
@@ -115,7 +117,7 @@
 .titleContainer h2 {
     color: var(--color-silver-white);
     font-size: 3.5vw; /* Responsive font size */
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 /* Description Styling */
@@ -123,12 +125,12 @@
     color: var(--color-light-gray);
 }
 
-/* Detail Container */
 .detailContainer {
+    margin-top: 32px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 65px;
+    gap: 32px;
 }
 
 /* Detail Content */
@@ -141,6 +143,39 @@
     margin-bottom: 8px;
     color: black;
 }
+
+.emphathizeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emphathizeContainer h2 {
+    margin-top: 16px; 
+}
+
+.smallImageContainer {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.smallImage {
+    width: 80%;
+    height: auto;
+}
+
+.smallImage.right {
+    align-self: flex-end;
+}
+
+.realVoicesImage {
+    width: 100%;
+    height: auto;
+}
+
 
 /* Final Reflections Section */
 .finalSection {
