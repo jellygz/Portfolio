@@ -233,10 +233,6 @@ export default function Remedify() {
                 src="/remedify/scanning_1.png"
                 alt="scanning"
                 fill  // Makes the image fill the parent div
-                style={{
-                    objectFit: "cover", // Ensures the image fills the div while maintaining aspect ratio
-                    paddingRight: '10px',
-                }}
             />
             </div>
         </div>
@@ -261,7 +257,7 @@ export default function Remedify() {
             </p>
         </div>
         {/* flex 5-2 */}
-        <div style={{display: 'flex', flexDirection: 'row', gap: '40px'}}>
+        <div style={{display: 'flex', marginTop: '55px', gap: '32px', alignItems: 'center'}}>
             <div style={{flex: '5'}}>
                 <h4 style={{fontSize: '35px', paddingBottom: '30px', paddingTop: '40px'}}>
                     💬  Real Voices: Challenges & Needs in Medication Management
@@ -275,25 +271,18 @@ export default function Remedify() {
                 </p>
 
             </div>
-            <div style={{ 
-                flex: '2', 
-                position: 'relative', 
-                padding: '10vw 10vw',
-                width: '100%', // Ensures the div stretches properly
-                height: 'auto', // Allows flexibility in height
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '40%' }}>
                 <Image
-                    className={styles.realVoicesImage}
-                    src="/remedify/Patient1.png" 
-                    alt="patient1" 
+                    className={styles.smallImage}
+                    src="/remedify/BiggestChallenge.png"
+                    alt="Challenge"
                     width={600} 
                     height={600} 
                 />
                 <Image
-                    className={styles.realVoicesImage}
-                    src="/remedify/BiggestChallenge.png"
-                    alt="Challenge"
-                    fill
+                    className={`${styles.smallImage} ${styles.right} ${styles.small}`}
+                    src="/remedify/Patient1.png" 
+                    alt="patient1" 
                     width={600} 
                     height={600} 
                 />
@@ -309,37 +298,29 @@ export default function Remedify() {
         padding: '20px',
         paddingLeft: '6vw',
     }}>
-    <div style={{
-        alignSelf: 'flex-start' // Pushes the div to the left
-    }}>
-        <h3 style={{color: 'lightgrey', fontSize: '20px'}}>
-            02.1 Mapping the Experience: User Flow
-        </h3>
+        <div>
+            <p style={{color: 'lightgrey', fontSize: '20px'}}>
+                02.1 Mapping the Experience: User Flow
+            </p>
 
-        <p style={{paddingTop: '30px'}}>
-        To ensure a seamless and intuitive experience, we mapped out the User Flow, outlining how users navigate the app to manage their medications. This helps us visualize the key steps users take—from setting up reminders to tracking adherence—ensuring efficiency and ease of use.
-        </p>
-    </div>
-
-    <div style={{
-    marginLeft: 'auto', // Pushes the div to the right
-    display: 'flex', // Ensures flex properties apply
-    justifyContent: 'flex-end', // Aligns content to the right
-}}>
-    <Image
-        className={styles.image}
-        src="/remedify/userflow.png"
-        alt="User Flow"
-        width={600}
-        height={600}
-        style={{
-            maxWidth: "80%",
-            height: "auto",
-            paddingTop: '30px',
-            paddingRight: '30px'
-        }}/>
+            <p style={{paddingTop: '30px'}}>
+            To ensure a seamless and intuitive experience, we mapped out the User Flow, outlining how users navigate the app to manage their medications. This helps us visualize the key steps users take—from setting up reminders to tracking adherence—ensuring efficiency and ease of use.
+            </p>
         </div>
-        </section>
+
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: '32px'}}>
+            <Image
+            src="/remedify/userflow.png"
+            alt="User Flow"
+            width={600}
+            height={600}
+            style={{
+                width: '100%',
+                maxWidth: '80%',
+                height: "auto",
+            }}/>
+        </div>
+    </section>
 
     {/* Section 8 */}
     <section className={styles.lightGreyContainer} style={{alignItems: 'center'}}>
@@ -348,7 +329,7 @@ export default function Remedify() {
         03 Design Opportunity Statement
         </p>
 
-        <h2 style={{color: 'black', fontSize: '30px', textAlign: 'center'}}>
+        <h2 style={{color: 'black', fontSize: '30px', textAlign: 'center', marginTop: '16px'}}>
         When a Simple Reminder Isn’t Enough, What’s the Next Step?
         </h2>
 
@@ -366,28 +347,26 @@ export default function Remedify() {
         IDEATE
         </h3>
 
-
-        <p style={{color: 'lightgrey', fontSize: '20px'}}>
-        01 Value Proposition
-        </p>
-
-
-        <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center'}}>
-        Value Proposition: Redefining Medication Management            </h2>
-
-        <div style={{padding: "3vw 16vw", textAlign: 'center', paddingBottom: '100px'}}>
-            <p style={{color: 'white', fontsize: ' 15px'}}>
-            Managing medications shouldn’t be complicated. Remedify streamlines adherence with clear schedules, smart reminders, and effortless tracking, ensuring users stay on top of their prescriptions with ease. Unlike standard pill reminder apps, it enhances the experience with AI-powered label scanning, an accessible medication library, and one-tap logging, minimizing manual input while maximizing efficiency. By providing organized regimens, essential drug information, and intuitive tracking, Remedify empowers users to manage their health effortlessly.                
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <p style={{color: 'lightgrey', fontSize: '20px'}}>
+            01 Value Proposition
             </p>
+            <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center', marginTop: '16px'}}>
+            Value Proposition: Redefining Medication Management            </h2>
+            <div style={{padding: "3vw 16vw", textAlign: 'center', paddingBottom: '100px'}}>
+                <p style={{color: 'white', fontsize: ' 15px'}}>
+                Managing medications shouldn’t be complicated. Remedify streamlines adherence with clear schedules, smart reminders, and effortless tracking, ensuring users stay on top of their prescriptions with ease. Unlike standard pill reminder apps, it enhances the experience with AI-powered label scanning, an accessible medication library, and one-tap logging, minimizing manual input while maximizing efficiency. By providing organized regimens, essential drug information, and intuitive tracking, Remedify empowers users to manage their health effortlessly.                
+                </p>
+            </div>
         </div>
     </section>
 
     {/* Section 10 */}
     <section className={styles.lightGreyContainer} style={{alignItems: 'center'}}>
         <div>
-            <h2 style={{color: 'grey'}}>
+            <p style={{color: 'grey', fontSize: '20px'}}>
             02 Competitive Analysis—How does Remedify compare to existing solutions?
-            </h2>
+            </p>
         </div>
 
         <div style={{display: 'flex', gap: '40px', paddingTop: '40px'}}>
@@ -411,18 +390,19 @@ export default function Remedify() {
         <div style={{
             display: 'flex', // Ensures flex properties apply
             justifyContent: 'center', // Aligns content to the center
+            paddingTop: '40px',
+            width: '100%'
             }}>
-    <Image
-        className={styles.image}
-        src="/remedify/companyAnalysis.png"
-        alt="company analysis"
-        width={600}
-        height={600}
-        style={{
-            maxWidth: "80%",
-            height: "auto",
-            paddingTop: '30px',
-        }}/>
+            <Image
+                src="/remedify/companyAnalysis.png"
+                alt="company analysis"
+                width={600}
+                height={600}
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                }}
+            />
         </div>
     </section>
 
@@ -442,16 +422,16 @@ export default function Remedify() {
         <div style={{
             display: 'flex', // Ensures flex properties apply
             justifyContent: 'center', // Aligns content to the center
-            paddingBottom: '100px'
+            paddingBottom: '100px',
+            width: '100%'
             }}>
     <Image
-        className={styles.image}
         src="/remedify/Wireframe.png"
         alt="wireframe"
         width={600}
         height={600}
         style={{
-            maxWidth: "60%",
+            maxWidth: "80%",
             height: "auto",
             paddingTop: '30px',
         }}/>
@@ -463,19 +443,20 @@ export default function Remedify() {
         <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px'}}>
         PROTOTYPE
         </h3>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}> 
+            <p style={{color: 'lightgrey', fontSize: '20px'}}>
+            01 Design Iterations
+            </p>
 
-        <p style={{color: 'lightgrey', fontSize: '20px'}}>
-        01 Design Iterations
-        </p>
+            <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center', marginTop: '16px'}}>
+            Iterate → Improve → Perfect
+            </h2>
 
-        <h2 style={{color: 'white', fontSize: '30px', textAlign: 'center'}}>
-        Iterate → Improve → Perfect
-        </h2>
-
-        <div style={{padding: "3vw 16vw", textAlign: 'center'}}>
-        <p style={{color: 'white', fontsize: ' 15px'}}>
-        Designing a solution that truly addresses medication adherence requires iterative prototyping and user validation. This section showcases how initial wireframes evolved into high-fidelity designs based on real user feedback.
-        </p>
+            <div style={{padding: "3vw 16vw", textAlign: 'center'}}>
+            <p style={{color: 'white', fontsize: ' 15px'}}>
+            Designing a solution that truly addresses medication adherence requires iterative prototyping and user validation. This section showcases how initial wireframes evolved into high-fidelity designs based on real user feedback.
+            </p>
+            </div>
         </div>
     </section>
 
@@ -524,24 +505,25 @@ export default function Remedify() {
         <div style={{
             display: 'flex', // Ensures flex properties apply
             justifyContent: 'center', // Aligns content to the center
+            width: '100%'
             }}>
     <Image
-        className={styles.image}
         src="/remedify/GoodMorningJohn.png"
         alt="GM"
         width={600}
         height={600}
         style={{
+            width: '100%',
             maxWidth: "80%",
             height: "auto",
-            paddingTop: '30px',
+            paddingTop: '55px',
         }}/>
         </div>
     </section>
 
     {/* Section 14 */}
     <section className={styles.lightGreyContainer} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', paddingBottom: '100px'}}>
-        <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px'}}>
+        <h3 style={{color: 'lightgrey', fontSize: '80px', paddingTop: '80px', marginBottom: '55px'}}>
         REFLECTION        
         </h3>
 
@@ -549,7 +531,7 @@ export default function Remedify() {
         Almost the end…
         </p>
 
-        <h2 style={{color: 'black', fontSize: '30px', textAlign: 'center'}}>
+        <h2 style={{color: 'black', fontSize: '30px', textAlign: 'center', marginTop: '16px'}}>
         🎢 The Rollercoaster Ride: Final Reflections
         </h2>
 
@@ -557,41 +539,33 @@ export default function Remedify() {
             <p style={{color: 'black', fontSize: '20px'}}>
             December 6th—the big day—finally arrived. Did I survive? Kind of. After countless sleepless nights, juggling life, personal chaos, a mountain of schoolwork, and this beast of a project, we somehow made it to the finish line. There were moments I thought I wouldn’t (seriously, who needs sleep anyway?), 
 
-but against all odds, I pulled through! 🎉 
+            but against all odds, I pulled through! 🎉 
             </p>
         </div>
 
-{/* flex 5-2 */}
-<div style={{ display: 'flex', flexDirection: 'row', gap: '40px' }}>
-    <div style={{ flex: '5' }}>
-        <h4 style={{ fontSize: '35px', paddingBottom: '30px', paddingTop: '40px' }}>
-            💡 A Room Full of Ideas: Sharing Our Innovation
-        </h4>
-
-        {/* Image below the text */}
-        <div style={{ width: '100%' }}>
+    <h4 style={{ fontSize: '35px', paddingBottom: '30px', paddingTop: '40px' }}>
+        💡 A Room Full of Ideas: Sharing Our Innovation
+    </h4>
+    <div style={{ display: 'flex', gap: '32px' }}>
+        <div>
             <Image
-                className={styles.image}
                 src="/remedify/mayorpic.png"
                 alt="Mayor"
                 width={600} // You can specify width and height
                 height={400} // Adjust these values as needed
                 style={{
-                    maxWidth: '100%', // Make the image fill the container width
+                    width: '100%',
                     height: 'auto', // Keep the aspect ratio intact
-                    objectFit: 'cover', // Ensure it covers the div without stretching
                 }}
             />
         </div>
+        <div style={{ flex: '2' }}>
+            <p style={{ fontSize: '20px' }}>
+                A few hours before the big presentation, we set up our stands, and the room quickly transformed into a showcase of creativity and innovation. Every team brought something unique—snacks, pamphlets, speakers, even costumes—you name it! The energy was incredible, with passionate students excited to share their work. Families, CEOs, mayors, and first-year students lined up, eager to explore the innovations on display. It was an honor to present our finished product and witness the impact of our hard work. (Though I won’t lie—talking to the mayor of Burnaby had my nerves working.) 
+                (See picture on the left.)
+            </p>
+        </div>
     </div>
-
-    <div style={{ flex: '2' }}>
-        <p style={{ fontSize: '20px', paddingTop: '120px' }}>
-            A few hours before the big presentation, we set up our stands, and the room quickly transformed into a showcase of creativity and innovation. Every team brought something unique—snacks, pamphlets, speakers, even costumes—you name it! The energy was incredible, with passionate students excited to share their work. Families, CEOs, mayors, and first-year students lined up, eager to explore the innovations on display. It was an honor to present our finished product and witness the impact of our hard work. (Though I won’t lie—talking to the mayor of Burnaby had my nerves working.) 
-            (See picture on the left.)
-        </p>
-    </div>
-</div>
 </section>
 
 {/* Section 15 */}

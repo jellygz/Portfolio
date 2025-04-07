@@ -15,7 +15,6 @@
 
 
 .lightGreyContainer {
-    width: 100vw;
     height: auto;
     display: flex;
     justify-content: center;
@@ -171,9 +170,8 @@
     align-self: flex-end;
 }
 
-.realVoicesImage {
-    width: 100%;
-    height: auto;
+.smallImage.right.small {
+    width: 60%;
 }
 
 
